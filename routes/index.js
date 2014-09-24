@@ -34,5 +34,9 @@ exports.weixin = function(req, res){
 	}
 };
 exports.weixinpost = function(req, res){
-	console.log(req.body)
+	var chunks = [];
+	req.on('data', function (data) {
+	    chunks.push(data);
+	    console.log(chunks);
+	});
 };
