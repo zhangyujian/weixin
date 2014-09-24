@@ -20,6 +20,7 @@ exports.index = function(req, res){
 };
 exports.weixin = function(req, res){
 	var token = "weixin",
+		echostr = req.query.echostr,
 		timestamp = req.query.timestamp,
 		nonce = req.query.nonce,
 		signature = req.query.signature,
@@ -27,7 +28,8 @@ exports.weixin = function(req, res){
 		arr = arr.sort();
 	var sign = sha1(arr.join(""));
 	if(sign == signature){
-			return true;
+		res.send(echostr)
+		return true;
 	}else{
 		return false;
 	}
