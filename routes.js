@@ -7,7 +7,7 @@ module.exports = function(app){
 	app.get('/', index.index);
 
 	app.get('*', function(req, res){
-	    res.render('admin/404', {
+	    res.render('default/404', {
 	        title: '404'
 	    })
 	});
