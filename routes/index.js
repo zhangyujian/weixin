@@ -29,11 +29,11 @@ exports.weixin = function(req, res){
 	if(sign == signature){
 		console.log(1);
 		chenggong();
-		req.send("success");
+		res.send("success");
 	}else{
 		console.log(2);
 		shibai();
-		req.send("fail");
+		res.send("fail");
 	}
 	function chenggong(){
 		return true;
