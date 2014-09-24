@@ -14,25 +14,24 @@ function sha1(str) {
 }
 
 exports.index = function(req, res){
-	var token = "qweqwe",
-			timestamp = req.query.timestamp,
-			nonce = req.query.nonce,
-			signature = req.query.signature,
-			arr = [token,timestamp,nonce],
-			arr = arr.sort();
-		var sign = sha1(arr.join(""));
-		if(sign == signature){
-			console.log(1);
-			return true;
-		}else{
-			console.log(2);
-			return false;
-		}
-	function render(){
-		res.render('default/index', {
-	        title: "微信"
-	    });
+	res.render('default/index', {
+        title: "微信"
+    });
+};
+exports.weixin = function(req, res){
+	var token = "weixin",
+		timestamp = req.query.timestamp,
+		nonce = req.query.nonce,
+		signature = req.query.signature,
+		arr = [token,timestamp,nonce],
+		arr = arr.sort();
+	var sign = sha1(arr.join(""));
+	if(sign == signature){
+		console.log(1);
+		return true;
+	}else{
+		console.log(2);
+		return false;
 	}
-	//compare(req);
-	render();
+	
 };
