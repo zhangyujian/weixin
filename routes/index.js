@@ -26,5 +26,7 @@ exports.index = function(req, res){
 	}else{
 		return false;
 	}
-	
+	res.render('default/index', {
+        title: "微信"
+    });
 };
