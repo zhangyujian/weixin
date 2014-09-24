@@ -23,8 +23,10 @@ exports.index = function(req, res){
 	var sign = sha1(arr.join(""));
 	function compare(sign,signature){
 		if(sign == signature){
+			console.log(1);
 			return true;
 		}else{
+			console.log(2);
 			return false;
 		}
 	}
