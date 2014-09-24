@@ -26,20 +26,14 @@ exports.weixin = function(req, res){
 		arr = [token,timestamp,nonce],
 		arr = arr.sort();
 	var sign = sha1(arr.join(""));
-	if(sign == signature){
-		console.log(1);
-		chenggong();
-		res.send("success");
-	}else{
-		console.log(2);
-		shibai();
-		res.send("fail");
+	function compare(a,b){
+		if(a == b){
+			return true;
+		}else{
+			return false;
+		}
 	}
-	function chenggong(){
-		return true;
-	}
-	function shibai(){
-		return false;
-	}
+	compare(sign,signature);
+	res.send("success");
 	
 };
