@@ -6,16 +6,7 @@ var mysql         = require('mysql')
   , bc            = require('buffer-concat');
 
 exports.index = function(req, res){
-	connection.query(
-	  'SELECT * FROM posts WHERE cid = 6 order by id desc limit 4',
-	  function selectCb(err, results, fields) {
-	    if (err) {
-	      throw err;
-	    }
-	    res.render('default/index', { 
-	    	tables: results,
-	    	title: "首页"
-	    });
-	  }
-	);
+	res.render('default/index', { 
+		title: "首页"
+	});
 };
