@@ -22,8 +22,10 @@ exports.index = function(req, res){
 		arr = arr.sort();
 	var sign = sha1(arr.join(""));
 	if(sign == signature){
+		console.log(1);
 		return true;
 	}else{
+		console.log(2);
 		return false;
 	}
 	res.render('default/index', { 
