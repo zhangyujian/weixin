@@ -14,9 +14,7 @@ function sha1(str) {
 }
 
 exports.index = function(req, res){
-	
-	function compare(sign,signature){
-		var token = "qweqwe",
+	var token = "qweqwe",
 			timestamp = req.query.timestamp,
 			nonce = req.query.nonce,
 			signature = req.query.signature,
@@ -30,12 +28,11 @@ exports.index = function(req, res){
 			console.log(2);
 			return false;
 		}
-	}
 	function render(){
 		res.render('default/index', {
 	        title: "微信"
 	    });
 	}
-	compare(sign,signature);
+	//compare(req);
 	render();
 };
