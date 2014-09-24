@@ -37,6 +37,10 @@ exports.weixinpost = function(req, res){
 	var chunks = [];
 	req.on('data', function (data) {
 	    chunks.push(data);
+	});
+	req.on('end', function () {
+	    chunks = Buffer.concat(chunks).toString();
 	    console.log(chunks);
 	});
+
 };
