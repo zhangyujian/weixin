@@ -35,5 +35,5 @@ exports.weixin = function(req, res){
 };
 exports.weixinpost = function(req, res){
 	console.log(1);
-	console.log(req.rawBody);
+	console.log(req);
 };
