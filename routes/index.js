@@ -21,7 +21,7 @@ exports.index = function(req, res){
 		arr = [token,timestamp,nonce],
 		arr = arr.sort();
 	var sign = sha1(arr.join(""));
-	function compare(){
+	function compare(sign,signature){
 		if(sign == signature){
 			return true;
 		}else{
@@ -33,6 +33,6 @@ exports.index = function(req, res){
 	        title: "微信"
 	    });
 	}
-	compare();
+	compare(sign,signature);
 	render();
 };
