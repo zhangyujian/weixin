@@ -19,11 +19,3 @@ exports.session = function(req,res,callback){//登录，保存session
         res.redirect('/admin/login');
     }
 };
-
-exports.connection = mysql.createConnection({
-    host : 'localhost',
-    port : 3306,
-    user : 'root',
-    password : 'root',
-    database : 'nodecms',
-});
