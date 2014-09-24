@@ -27,11 +27,13 @@ exports.weixin = function(req, res){
 		arr = arr.sort();
 	var sign = sha1(arr.join(""));
 	if(sign == signature){
-		console.log(1);
+		
 		return true;
+		req.send("success");
 	}else{
 		console.log(2);
 		return false;
+		req.send("fail");
 	}
 	
 };
