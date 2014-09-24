@@ -14,14 +14,15 @@ function sha1(str) {
 }
 
 exports.index = function(req, res){
-	var token = "qweqwe",
-		timestamp = req.query.timestamp,
-		nonce = req.query.nonce,
-		signature = req.query.signature,
-		arr = [token,timestamp,nonce],
-		arr = arr.sort();
-	var sign = sha1(arr.join(""));
+	
 	function compare(sign,signature){
+		var token = "qweqwe",
+			timestamp = req.query.timestamp,
+			nonce = req.query.nonce,
+			signature = req.query.signature,
+			arr = [token,timestamp,nonce],
+			arr = arr.sort();
+		var sign = sha1(arr.join(""));
 		if(sign == signature){
 			console.log(1);
 			return true;
