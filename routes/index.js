@@ -34,7 +34,5 @@ exports.weixin = function(req, res){
 	}
 };
 exports.weixinpost = function(req, res){
-	req.addListener("data",function(data){
-	    console.log("Received POST data :")+data ;  
-	});
+	console.log(req.body)
 };
