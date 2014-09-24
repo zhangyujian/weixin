@@ -28,15 +28,12 @@ exports.weixin = function(req, res){
 		arr = arr.sort();
 	var sign = sha1(arr.join(""));
 	if(sign == signature){
-		res.send(echostr)
-		return true;
+		res.send(echostr);
 	}else{
-		return false;
+		res.send("failed");
 	}
-	
-	//res.send("success");
-	
 };
 exports.weixinpost = function(req, res){
 	console.log(1);
+	console.log(req.rawBody);
 };
