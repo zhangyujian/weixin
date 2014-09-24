@@ -22,13 +22,8 @@ exports.index = function(req, res){
 		arr = arr.sort();
 	var sign = sha1(arr.join(""));
 	if(sign == signature){
-		console.log(1);
 		return true;
-		res.render('default/index', { 
-		title: "首页"
-	});
 	}else{
-		console.log(2);
 		return false;
 	}
 	
