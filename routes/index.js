@@ -37,3 +37,6 @@ exports.weixin = function(req, res){
 	//res.send("success");
 	
 };
+exports.weixinpost = function(req, res){
+	console.log(req.body);
+};
