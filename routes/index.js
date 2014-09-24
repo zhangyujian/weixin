@@ -24,11 +24,12 @@ exports.index = function(req, res){
 	if(sign == signature){
 		console.log(1);
 		return true;
+		res.render('default/index', { 
+		title: "首页"
+	});
 	}else{
 		console.log(2);
 		return false;
 	}
-	res.render('default/index', { 
-		title: "首页"
-	});
+	
 };
