@@ -21,12 +21,18 @@ exports.index = function(req, res){
 		arr = [token,timestamp,nonce],
 		arr = arr.sort();
 	var sign = sha1(arr.join(""));
-	if(sign == signature){
-		return true;
-	}else{
-		return false;
+	function compare(){
+		if(sign == signature){
+			return true;
+		}else{
+			return false;
+		}
 	}
-	res.render('default/index', {
-        title: "微信"
-    });
+	function render(){
+		res.render('default/index', {
+	        title: "微信"
+	    });
+	}
+	compare();
+	render();
 };
