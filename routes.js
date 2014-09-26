@@ -7,6 +7,7 @@ module.exports = function(app){
 	app.get('/', index.index);
 	app.get('/weixin', index.weixin);
 	app.post('/weixin', index.weixinpost);
+	app.get('/weixintest', index.weixintest);
 
 	app.get('*', function(req, res){
 	    res.render('default/404', {
