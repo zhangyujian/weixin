@@ -41,8 +41,7 @@ exports.weixinpost = function(req, res){
 	req.on('end', function () {
 	    chunks = Buffer.concat(chunks).toString();
 	    return chunks;
+	    res.send(chunks);
 	});
-
-	console.log(chunks+"-------");
 
 };
