@@ -11,6 +11,8 @@
     "markdown": "*",
     "mysql": "*",
     "connect-flash": "*",
-    "nodemailer": "*"
+    "nodemailer": "*",
+    "node-xml-lite": "~0.0.3",
+    "lodash-template": "~1.0"
   }
 }
