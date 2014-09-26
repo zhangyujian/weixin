@@ -6,6 +6,8 @@ var mysql         = require('mysql')
   , markdown      = require('markdown').markdown
   , bc            = require('buffer-concat');
 
+var parseString = require('xml2js').parseString;
+
 function sha1(str) {
     var md5sum = crypto.createHash('sha1');
     md5sum.update(str);
@@ -41,10 +43,12 @@ exports.weixinpost = function(req, res){
 	req.on('end', function () {
 	    chunks = Buffer.concat(chunks).toString();
 	    try{
-	    	console.log(chunks);
-	    	res.send(11);
-	    	res.setHeader('Content-Type', 'application/xml');
-    		res.end(chunks);
+	    	var xml = chunks;
+	    	parseString(xml, function (err, result) {
+	    		res.setHeader('Content-Type', 'application/xml');
+    			res.end(result);
+			});
+	    	
         }
 		catch(e){
 		    console.log('error..');
@@ -54,6 +58,6 @@ exports.weixinpost = function(req, res){
 };
 
 exports.weixintest = function(req, res){
-	
+
 
 };
