@@ -53,7 +53,7 @@ exports.weixinpost = function(req, res){
 };
 
 exports.weixintest = function(req, res){
-	res.setHeader('Content-Type', 'application/xml');
+	res.setHeader('Content-Type', 'text/xml');
     res.end("aaa");
 
 };
