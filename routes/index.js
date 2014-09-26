@@ -42,6 +42,7 @@ exports.weixinpost = function(req, res){
 	    chunks = Buffer.concat(chunks).toString();
 	    try{
 	    	console.log(chunks);
+	    	res.send(11);
 	    	res.setHeader('Content-Type', 'application/xml');
     		res.end(chunks);
         }
@@ -53,7 +54,6 @@ exports.weixinpost = function(req, res){
 };
 
 exports.weixintest = function(req, res){
-	res.setHeader('Content-Type', 'text/xml');
-    res.end("aaa");
+	
 
 };
