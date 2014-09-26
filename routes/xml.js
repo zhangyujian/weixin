@@ -75,7 +75,7 @@ function parseXml(b, options) {
   var mmap = options.paramMap || paramMap
   var tree = xmllite.parseString(b)
   var xml = flattern(tree)
-
+  console.log("parseXml");
   return readable(xml, pmap, mmap)
 }
 

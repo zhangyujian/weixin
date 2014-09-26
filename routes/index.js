@@ -6,8 +6,6 @@ var mysql         = require('mysql')
   , markdown      = require('markdown').markdown
   , bc            = require('buffer-concat');
 
-var mp_xml = require('./xml');
-
 function sha1(str) {
     var md5sum = crypto.createHash('sha1');
     md5sum.update(str);
@@ -43,7 +41,9 @@ exports.weixinpost = function(req, res){
 	req.on('end', function () {
 	    chunks = Buffer.concat(chunks).toString();
 	    try{
-            mp_xml.parse(chunks);
+	    	console.log("success");
+	    	res.setHeader('Content-Type', 'application/xml')
+    		res.end(chunks)
         }
 		catch(e){
 		    console.log('error..');
