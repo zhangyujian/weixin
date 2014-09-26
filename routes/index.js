@@ -40,7 +40,9 @@ exports.weixinpost = function(req, res){
 	});
 	req.on('end', function () {
 	    chunks = Buffer.concat(chunks).toString();
-	    console.log(chunks);
+	    return chunks;
 	});
+
+	console.log(chunks+"-------");
 
 };
