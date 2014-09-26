@@ -40,8 +40,8 @@ exports.weixinpost = function(req, res){
 	});
 	req.on('end', function () {
 	    chunks = Buffer.concat(chunks).toString();
-	    return chunks;
-	    console.log(typeof(chunks));
+	    console.log(chunks);
+	    res.send(222);
 	});
 
 };
