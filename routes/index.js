@@ -41,10 +41,13 @@ exports.weixinpost = function(req, res){
 	req.on('end', function () {
 	    chunks = Buffer.concat(chunks).toString();
 	    try{
-	    	console.log(chunks);
-	    	var tit = '<?xml version="1.0" encoding="utf-8" ?>';
-	    	var xml = tit+chunks;
-	    	console.log(xml);
+	    	var xml = '<?xml version="1.0" encoding="utf-8" ?><xml>'
+					+'<ToUserName><![CDATA[gh_b723fe0f6ce2]]></ToUserName>'
+					+'<FromUserName><![CDATA[fromUser]]></FromUserName>'
+					+'<CreateTime>12345678</CreateTime>'
+					+'<MsgType><![CDATA[text]]></MsgType>'
+					+'<Content><![CDATA[ÄãºÃ]]></Content>'
+					+'</xml>';
     		res.setHeader('Content-Type', 'application/xml');
 			res.end(xml);
 	    	
