@@ -46,7 +46,7 @@ exports.weixinpost = function(req, res){
 					+'<FromUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></FromUserName>'
 					+'<CreateTime>1411881868</CreateTime>'
 					+'<MsgType><![CDATA[text]]></MsgType>'
-					+'<Content><![CDATA[ÄãºÃ]]></Content>'
+					+'<Content><![CDATA[111111111]]></Content>'
 					+'</xml>';
     		res.setHeader('Content-Type', 'application/xml');
 			res.end(xml);
@@ -60,13 +60,13 @@ exports.weixinpost = function(req, res){
 };
 
 exports.weixintest = function(req, res){
-	var chunks ='<?xml version="1.0" encoding="utf-8" ?><xml><ToUserName><![CDATA[gh_b723fe0f6ce2]]></ToUserName>'
-			+'<FromUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></FromUserName>'
-			+'<CreateTime>1411881868</CreateTime>'
-			+'<MsgType><![CDATA[text]]></MsgType>'
-			+'<Content><![CDATA[1]]></Content>'
-			+'<MsgId>6063986449076373153</MsgId>'
-			+'</xml>';
+	var xml = '<xml>'
+					+'<ToUserName><![CDATA[gh_b723fe0f6ce2]]></ToUserName>'
+					+'<FromUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></FromUserName>'
+					+'<CreateTime>1411881868</CreateTime>'
+					+'<MsgType><![CDATA[text]]></MsgType>'
+					+'<Content><![CDATA[111]]></Content>'
+					+'</xml>';
 	res.setHeader('Content-Type', 'application/xml');
-	res.end(chunks);
+	res.end(xml);
 };
