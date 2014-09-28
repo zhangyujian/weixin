@@ -6,7 +6,7 @@ var mysql         = require('mysql')
   , markdown      = require('markdown').markdown
   , bc            = require('buffer-concat');
 
-var parseString = require('xml2js').parseString;
+var xml = require('xml');
 
 function sha1(str) {
     var md5sum = crypto.createHash('sha1');
@@ -17,7 +17,7 @@ function sha1(str) {
 
 exports.index = function(req, res){
 	res.render('default/index', {
-        title: "å¾®ä¿¡"
+        title: "Î¢ÐÅ"
     });
 };
 exports.weixin = function(req, res){
@@ -44,11 +44,10 @@ exports.weixinpost = function(req, res){
 	    chunks = Buffer.concat(chunks).toString();
 	    try{
 	    	console.log(chunks);
-	    	/*var xml = chunks;
-	    	parseString(xml, function (err, result) {
-	    		res.setHeader('Content-Type', 'application/xml');
-    			res.end(result);
-			});*/
+	    	var tit = '<?xml version="1.0" encoding="utf-8" ?>';
+	    	var xml = tit+chunks;
+    		res.setHeader('Content-Type', 'application/xml');
+			res.end(xml);
 	    	
         }
 		catch(e){
@@ -59,6 +58,13 @@ exports.weixinpost = function(req, res){
 };
 
 exports.weixintest = function(req, res){
-
-
+	var chunks ='<?xml version="1.0" encoding="utf-8" ?><xml><ToUserName><![CDATA[gh_b723fe0f6ce2]]></ToUserName>'
+			+'<FromUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></FromUserName>'
+			+'<CreateTime>1411881868</CreateTime>'
+			+'<MsgType><![CDATA[text]]></MsgType>'
+			+'<Content><![CDATA[1]]></Content>'
+			+'<MsgId>6063986449076373153</MsgId>'
+			+'</xml>';
+	res.setHeader('Content-Type', 'application/xml');
+	res.end(chunks);
 };
