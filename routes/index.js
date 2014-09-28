@@ -6,8 +6,6 @@ var mysql         = require('mysql')
   , markdown      = require('markdown').markdown
   , bc            = require('buffer-concat');
 
-var xml = require('xml');
-
 function sha1(str) {
     var md5sum = crypto.createHash('sha1');
     md5sum.update(str);
