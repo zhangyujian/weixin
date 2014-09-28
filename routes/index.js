@@ -44,6 +44,7 @@ exports.weixinpost = function(req, res){
 	    	console.log(chunks);
 	    	var tit = '<?xml version="1.0" encoding="utf-8" ?>';
 	    	var xml = tit+chunks;
+	    	console.log(xml);
     		res.setHeader('Content-Type', 'application/xml');
 			res.end(xml);
 	    	
