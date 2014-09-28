@@ -43,11 +43,12 @@ exports.weixinpost = function(req, res){
 	req.on('end', function () {
 	    chunks = Buffer.concat(chunks).toString();
 	    try{
-	    	var xml = chunks;
+	    	console.log(chunks);
+	    	/*var xml = chunks;
 	    	parseString(xml, function (err, result) {
 	    		res.setHeader('Content-Type', 'application/xml');
     			res.end(result);
-			});
+			});*/
 	    	
         }
 		catch(e){
