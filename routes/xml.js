@@ -9,11 +9,6 @@ var handleXML = function(source){
     var fusername = select(doc, "//FromUserName")[0].firstChild.data;
     var CreateTime = select(doc, "//CreateTime")[0].firstChild.data;
     var MsgId = select(doc, "//MsgId")[0].firstChild.data;
-
-    var xml = var source = '<xml>'
-			+'<ToUserName><![CDATA['+ fusername +']]></ToUserName>'
-			+'<FromUserName><![CDATA['+ username +']]></FromUserName>'
-			+'<CreateTime>'+ CreateTime +'</CreateTime>';
 	if(MsgType == "text"){
 		var Content = select(doc, "//Content")[0].firstChild.data;
 		xml = xml + '<Content><![CDATA['+ Content +']]></Content>'
