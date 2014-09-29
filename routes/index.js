@@ -46,7 +46,6 @@ exports.weixinpost = function(req, res){
         chunks = Buffer.concat(chunks).toString();
         try{
             var xml = handleXML(chunks);
-            console.log(xml);
             res.setHeader('Content-Type', 'application/xml');
             res.end(xml);
             
