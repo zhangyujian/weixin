@@ -5,7 +5,7 @@ var mysql         = require('mysql')
   , connection    = require('./common').connection
   , markdown      = require('markdown').markdown
   , bc            = require('buffer-concat')
-  , xmltpl        = require('./xml');
+  , handleXML        = require('./xml').handleXML;
 
 var select = require('xpath.js')
     , dom = require('xmldom').DOMParser;
@@ -46,7 +46,7 @@ exports.weixinpost = function(req, res){
         chunks = Buffer.concat(chunks).toString();
         try{
             console.log(chunks);
-            var xml = xmltpl.handleXML(chunks);
+            var xml = handleXML(chunks);
             console.log(xml);
             res.setHeader('Content-Type', 'application/xml');
             res.end(xml);
@@ -60,7 +60,7 @@ exports.weixinpost = function(req, res){
 };
 
 exports.weixintest = function(req, res){
-    var xml = '<xml>'
+    /*var xml = '<xml>'
             +'<ToUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></ToUserName>'
             +'<FromUserName><![CDATA[gh_b723fe0f6ce2]]></FromUserName>'
             +'<CreateTime>1411881868</CreateTime>'
@@ -68,12 +68,9 @@ exports.weixintest = function(req, res){
             +'<Content><![CDATA[这是一条测试语句]]></Content>'
             +'<MsgId>6064321155877753955</MsgId>'
             +'</xml>';
-    //var doc = new dom().parseFromString(xml); 
-    //var MsgType = select(doc, "//MsgType")[0].firstChild.data;
-    console.log(xmltpl.handleXML(xml));
-    //console.log(nodes[0].firstChild.data);
+    console.log(xmltpl.handleXML(xml));*/
 
-
-    /*res.setHeader('Content-Type', 'application/xml');
-    res.end(xml);*/
+var xml = '<xml><ToUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></ToUserName><FromUserName><![CDATA[gh_b723fe0f6ce2]]></FromUserName><CreateTime>1411985342</CreateTime><Content><![CDATA[444]]></Content><MsgId>6064430866522365770</MsgId></xml>'
+    res.setHeader('Content-Type', 'application/xml');
+    res.end(xml);
 };
