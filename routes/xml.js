@@ -11,12 +11,12 @@ exports.handleXML = function(source){
     var MsgId = select(doc, "//MsgId")[0].firstChild.data;
 
     var xml ='<xml>'
-			+'<ToUserName>'+fusername+'</ToUserName>'
-			+'<FromUserName>'+username+'</FromUserName>'
+			+'<ToUserName><![CDATA['+fusername+']]></ToUserName>'
+			+'<FromUserName><![CDATA['+username+']]></FromUserName>'
 			+'<CreateTime>'+CreateTime+'</CreateTime>';
 	if(MsgType == "text"){
 		var Content = select(doc, "//Content")[0].firstChild.data;
-		xml = xml + '<Content>'+Content+'</Content>'
+		xml = xml + '<MsgType><![CDATA[text]]></MsgType><Content><![CDATA['+Content+']]></Content>'
 	}
 	xml = xml + '<MsgId>'+MsgId+'</MsgId></xml>';
 	return xml;
