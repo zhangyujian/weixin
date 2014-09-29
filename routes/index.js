@@ -43,8 +43,8 @@ exports.weixinpost = function(req, res){
 	    try{
 	    	console.log(chunks);
 	    	var xml = '<xml>'
-					+'<ToUserName><![CDATA[gh_b723fe0f6ce2]]></ToUserName>'
-					+'<FromUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></FromUserName>'
+					+'<ToUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></ToUserName>'
+					+'<FromUserName><![CDATA[gh_b723fe0f6ce2]]></FromUserName>'
 					+'<CreateTime>1411881868</CreateTime>'
 					+'<MsgType><![CDATA[text]]></MsgType>'
 					+'<Content><![CDATA[111111111]]></Content>'
