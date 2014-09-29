@@ -14,70 +14,70 @@ function sha1(str) {
 }
 
 exports.index = function(req, res){
-	res.render('default/index', {
-        title: "Œ¢–≈"
+    res.render('default/index', {
+        title: "ÂæÆ‰ø°"
     });
 };
 exports.weixin = function(req, res){
-	var token = "weixin",
-		echostr = req.query.echostr,
-		timestamp = req.query.timestamp,
-		nonce = req.query.nonce,
-		signature = req.query.signature,
-		arr = [token,timestamp,nonce],
-		arr = arr.sort();
-	var sign = sha1(arr.join(""));
-	if(sign == signature){
-		res.send(echostr);
-	}else{
-		res.send("failed");
-	}
+    var token = "weixin",
+        echostr = req.query.echostr,
+        timestamp = req.query.timestamp,
+        nonce = req.query.nonce,
+        signature = req.query.signature,
+        arr = [token,timestamp,nonce],
+        arr = arr.sort();
+    var sign = sha1(arr.join(""));
+    if(sign == signature){
+        res.send(echostr);
+    }else{
+        res.send("failed");
+    }
 };
 exports.weixinpost = function(req, res){
-	var chunks = [];
-	req.on('data', function (data) {
-	    chunks.push(data);
-	});
-	req.on('end', function () {
-	    chunks = Buffer.concat(chunks).toString();
-	    try{
-	    	console.log(chunks);
-	    	var xml = '<xml>'
-					+'<ToUserName>ocwedjkM8vjTYsqgXkPg3kVfAdM0</ToUserName>'
-					+'<FromUserName>gh_b723fe0f6ce2</FromUserName>'
-					+'<CreateTime>1411881868</CreateTime>'
-					+'<MsgType>text</MsgType>'
-					+'<Content>’‚ «“ªÃı≤‚ ‘”Ôæ‰</Content>'
-					+'<MsgId>6064321155877753955</MsgId>'
-					+'</xml>';
-			/*var xml = '<xml>'
-					+'<ToUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></ToUserName>'
-					+'<FromUserName><![CDATA[gh_b723fe0f6ce2]]></FromUserName>'
-					+'<CreateTime>1411881868</CreateTime>'
-					+'<MsgType><![CDATA[text]]></MsgType>'
-					+'<Content><![CDATA[111111111]]></Content>'
-					+'<MsgId>6064321155877753955</MsgId>'
-					+'</xml>';*/
-    		res.setHeader('Content-Type', 'application/xml');
-			res.end(xml);
-	    	
+    var chunks = [];
+    req.on('data', function (data) {
+        chunks.push(data);
+    });
+    req.on('end', function () {
+        chunks = Buffer.concat(chunks).toString();
+        try{
+            console.log(chunks);
+            var xml = '<xml>'
+                    +'<ToUserName>ocwedjkM8vjTYsqgXkPg3kVfAdM0</ToUserName>'
+                    +'<FromUserName>gh_b723fe0f6ce2</FromUserName>'
+                    +'<CreateTime>1411881868</CreateTime>'
+                    +'<MsgType>text</MsgType>'
+                    +'<Content>ËøôÊòØ‰∏ÄÊù°ÊµãËØïËØ≠Âè•</Content>'
+                    +'<MsgId>6064321155877753955</MsgId>'
+                    +'</xml>';
+            /*var xml = '<xml>'
+                    +'<ToUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></ToUserName>'
+                    +'<FromUserName><![CDATA[gh_b723fe0f6ce2]]></FromUserName>'
+                    +'<CreateTime>1411881868</CreateTime>'
+                    +'<MsgType><![CDATA[text]]></MsgType>'
+                    +'<Content><![CDATA[111111111]]></Content>'
+                    +'<MsgId>6064321155877753955</MsgId>'
+                    +'</xml>';*/
+            res.setHeader('Content-Type', 'application/xml');
+            res.end(xml);
+            
         }
-		catch(e){
-		    console.log('error..');
-		}
-	});
+        catch(e){
+            console.log('error..');
+        }
+    });
 
 };
 
 exports.weixintest = function(req, res){
-	var xml = '<xml>'
-					+'<ToUserName><![CDATA[gh_b723fe0f6ce2]]></ToUserName>'
-					+'<FromUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></FromUserName>'
-					+'<CreateTime>1411881868</CreateTime>'
-					+'<MsgType><![CDATA[text]]></MsgType>'
-					+'<Content><![CDATA[111]]></Content>'
-					+'<MsgId>6064321155877753955</MsgId>'
-					+'</xml>';
-	res.setHeader('Content-Type', 'application/xml');
-	res.end(xml);
+    var xml = '<xml>'
+                    +'<ToUserName><![CDATA[gh_b723fe0f6ce2]]></ToUserName>'
+                    +'<FromUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></FromUserName>'
+                    +'<CreateTime>1411881868</CreateTime>'
+                    +'<MsgType><![CDATA[text]]></MsgType>'
+                    +'<Content><![CDATA[111]]></Content>'
+                    +'<MsgId>6064321155877753955</MsgId>'
+                    +'</xml>';
+    res.setHeader('Content-Type', 'application/xml');
+    res.end(xml);
 };
