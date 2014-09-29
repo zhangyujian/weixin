@@ -2,7 +2,7 @@ var select = require('xpath.js')
     , dom = require('xmldom').DOMParser;
 
 
-var handleXML = function(source){
+exports.handleXML = function(source){
 	var doc = new dom().parseFromString(source); 
     var MsgType = select(doc, "//MsgType")[0].firstChild.data;
     var username = select(doc, "//ToUserName")[0].firstChild.data;
@@ -16,9 +16,4 @@ var handleXML = function(source){
 	xml = xml + '<MsgId>'+ MsgId +'</MsgId>';
 	return xml;
 
-}
-
-
-module.exports = {
-	handleXML: handleXML,
 }
