@@ -48,6 +48,7 @@ exports.weixinpost = function(req, res){
 					+'<CreateTime>1411881868</CreateTime>'
 					+'<MsgType><![CDATA[text]]></MsgType>'
 					+'<Content><![CDATA[111111111]]></Content>'
+					+'<MsgId>6064321155877753955</MsgId>'
 					+'</xml>';
     		res.setHeader('Content-Type', 'application/xml');
 			res.end(xml);
@@ -67,6 +68,7 @@ exports.weixintest = function(req, res){
 					+'<CreateTime>1411881868</CreateTime>'
 					+'<MsgType><![CDATA[text]]></MsgType>'
 					+'<Content><![CDATA[111]]></Content>'
+					+'<MsgId>6064321155877753955</MsgId>'
 					+'</xml>';
 	res.setHeader('Content-Type', 'application/xml');
 	res.end(xml);
