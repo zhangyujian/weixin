@@ -18,7 +18,7 @@ exports.handleXML = function(source){
 		var Content = select(doc, "//Content")[0].firstChild.data;
 		xml = xml + '<Content><![CDATA['+ Content +']]></Content>'
 	}
-	xml = xml + '<MsgId>'+ MsgId +'</MsgId>';
+	xml = xml + '<MsgId>'+ MsgId +'</MsgId></xml>';
 	return xml;
 
 }
