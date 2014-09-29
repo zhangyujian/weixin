@@ -34,7 +34,7 @@ exports.weixin = function(req, res){
 	}
 };
 exports.weixinpost = function(req, res){
-	var chunks = [];
+	/*var chunks = [];
 	req.on('data', function (data) {
 	    chunks.push(data);
 	});
@@ -55,7 +55,17 @@ exports.weixinpost = function(req, res){
 		catch(e){
 		    console.log('error..');
 		}
-	});
+	});*/
+
+var xml = '<xml>'
+					+'<ToUserName><![CDATA[gh_b723fe0f6ce2]]></ToUserName>'
+					+'<FromUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></FromUserName>'
+					+'<CreateTime>1411881868</CreateTime>'
+					+'<MsgType><![CDATA[text]]></MsgType>'
+					+'<Content><![CDATA[111111111]]></Content>'
+					+'</xml>';
+    		res.setHeader('Content-Type', 'application/xml');
+			res.end(xml);
 
 };
 
