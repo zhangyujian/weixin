@@ -66,9 +66,9 @@ exports.weixintest = function(req, res){
             +'<Content><![CDATA[这是一条测试语句]]></Content>'
             +'<MsgId>6064321155877753955</MsgId>'
             +'</xml>';
-    var doc = new dom().parseFromString(xml); 
-    var MsgType = select(doc, "//MsgType")[0].firstChild.data;
-    console.log(MsgType);
+    //var doc = new dom().parseFromString(xml); 
+    //var MsgType = select(doc, "//MsgType")[0].firstChild.data;
+    console.log(xmltpl.handleXML(xml));
     //console.log(nodes[0].firstChild.data);
 
 
