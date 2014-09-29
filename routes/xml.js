@@ -19,7 +19,6 @@ exports.handleXML = function(source){
 		xml = xml + '<Content><![CDATA['+ Content +']]></Content>'
 	}
 	xml = xml + '<MsgId>'+ MsgId +'</MsgId>';
-	console.log(xml)
 	return xml;
 
 }

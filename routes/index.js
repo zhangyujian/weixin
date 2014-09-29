@@ -47,6 +47,7 @@ exports.weixinpost = function(req, res){
         try{
             console.log(chunks);
             var xml = xmltpl.handleXML(chunks);
+            console.log(xml);
             res.setHeader('Content-Type', 'application/xml');
             res.end(xml);
             
