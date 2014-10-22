@@ -68,7 +68,7 @@ exports.weixintest = function(req, res){
             +'</xml>';
     console.log(xmltpl.handleXML(xml));*/
 
-    var xml = '<xml><ToUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></ToUserName><FromUserName><![CDATA[gh_b723fe0f6ce2]]></FromUserName><CreateTime>1411985342</CreateTime><Content><![CDATA[444]]></Content><MsgId>6064430866522365770</MsgId></xml>'
+    var xml = '<xml><ToUserName><![CDATA[ocwedjkM8vjTYsqgXkPg3kVfAdM0]]></ToUserName><FromUserName><![CDATA[gh_b723fe0f6ce2]]></FromUserName><CreateTime>1411985342</CreateTime><Content><![CDATA[22]]><![CDATA[444]]></Content><MsgId>6064430866522365770</MsgId></xml>'
     res.setHeader('Content-Type', 'application/xml');
     res.end(xml);
 };
