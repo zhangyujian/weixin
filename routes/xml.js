@@ -19,7 +19,7 @@ exports.handleXML = function(source){
 		xml = xml + '<MsgType><![CDATA[text]]></MsgType><Content><![CDATA[文本：'+Content+']]></Content>'
 	}
 	else{
-		xml = xml + '<MsgType><![CDATA[text]]></MsgType><Content><![CDATA[123]]><![CDATA[您发送的信息不能识别]]></Content>'
+		xml = xml + '<MsgType><![CDATA[text]]></MsgType><Content><![CDATA[您发送的信息不能识别]]></Content>'
 	}
 	xml = xml + '<MsgId>'+MsgId+'</MsgId></xml>';
 	return xml;
